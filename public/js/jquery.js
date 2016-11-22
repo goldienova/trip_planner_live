@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 $.each(hotels, function(index){
-	$('#hotel-choices').append($(`<option>${$hotel_name.selector}</option>`));
+	$('#hotel-choices').append($(`<option>${hotels[index].name}</option>`));
 });
 
 $.each(restaurants, function(index){
