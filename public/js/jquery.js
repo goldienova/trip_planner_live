@@ -51,7 +51,8 @@ $('.list-group').on('click', '.remove', function(e){
 	const $btn = $(this);
 	console.log(this);
 	const itemToRemove = $btn.prev('.title');
-	console.log(itemToRemove);
+	itemToRemove.remove();
+	$btn.remove();
 })
 
 
