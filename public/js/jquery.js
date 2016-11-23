@@ -82,12 +82,13 @@ $("#day-add").on('click', function(e){
 })
 
 $('.day-buttons').on('click', '.day-btn', function(){
-	$(this).siblings('.day-btn').removeClass('current-day');
-	$(this).addClass('current-day');
+	
 	var dayObj = $(this)
 	var number = dayObj.text();
 	if (dayObj.text() !== "+"){
-		console.log("what")
+		$(this).siblings('.day-btn').removeClass('current-day');
+		$(this).addClass('current-day');
+		$('#day-title').children().remove()	
 		$('#day-title').append('<span>Day ' + number + '</span><button class="btn btn-xs btn-danger remove btn-circle">x</button>');
 	}
 
