@@ -1,3 +1,24 @@
+var day1 = {
+	hotel : "",
+	restaurant : [],
+	activites : []
+}
+var day2 = {
+	hotel : "",
+	restaurant : [],
+	activites : []
+}
+var day3 = {
+	hotel : "",
+	restaurant : [],
+	activites : []
+}
+var day4 = {
+	hotel : "",
+	restaurant : [],
+	activites : []
+}
+
 $(document).ready(function(){
 
 $.each(hotels, function(index){
@@ -53,6 +74,23 @@ $('.list-group').on('click', '.remove', function(e){
 	const itemToRemove = $btn.prev('.title');
 	itemToRemove.remove();
 	$btn.remove();
+})
+
+$("#day-add").on('click', function(e){
+	var i = $(".day-buttons").children().length;
+	if (i <= 4) $('#day-add').before('<button class="btn btn-circle day-btn">' + i +'</button>')
+})
+
+$('.day-buttons').on('click', '.day-btn', function(){
+	$(this).siblings('.day-btn').removeClass('current-day');
+	$(this).addClass('current-day');
+	var dayObj = $(this)
+	var number = dayObj.text();
+	if (dayObj.text() !== "+"){
+		console.log("what")
+		$('#day-title').append('<span>Day ' + number + '</span><button class="btn btn-xs btn-danger remove btn-circle">x</button>');
+	}
+
 })
 
 
